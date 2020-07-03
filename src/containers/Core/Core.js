@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Search from '../../components/search/search';
-import useRequest from '../../hooks/request';
+import Loading from '../../components/loading/loading';
+import Dialog from '../../components/dialog/dialog';
 
+import useRequest from '../../hooks/request';
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const Core = () => {
@@ -20,8 +22,20 @@ const Core = () => {
   return (
     <div>
       <Search setQuery={optionsHandler} />
-      {loading && <p>loading...</p>}
-      {error && <p>error: code: {error.error.code} message: {error.error.code} </p>}
+      {loading && (
+        <Dialog>
+          <p>loading...</p>
+          <Loading />
+        </Dialog>
+      )}
+      {error && (
+        <Dialog type="danger">
+          <p>Oops, something went wrong!</p>
+          <br />
+          <p>{error.error.code}</p>
+        </Dialog>
+      )}
+
     </div>
   );
 };
