@@ -1,7 +1,9 @@
 {
   "standard": {
-    "dark": "#15161895",
-    "light": "#3F586C95",
+    "darkOp": "#15161895",
+    "dark": "#151618",
+    "lightOp": "#3F586C95",
+    "light": "#3F586C",
     "color": "#FFF",
     "invertedColor": "#000"
   }
