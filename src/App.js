@@ -1,12 +1,11 @@
 import React from 'react';
 import Layout from './containers/Layout/Layout';
-
-import Search from './components/search/search';
+import Core from './containers/Core/Core';
 
 function App() {
   return (
     <Layout>
-      <Search />
+      <Core />
     </Layout>
   );
 }
