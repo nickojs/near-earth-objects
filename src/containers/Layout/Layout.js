@@ -1,23 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import Theme from '../../Theme';
 import themes from './themes.json';
 
-const Layout = ({ children }) => {
-  const Container = styled.div`
-    width: 80%; 
-    max-width: 1200px; 
-    margin: 0 auto;
-  `;
+import * as S from './styles';
+import Theme from '../../Theme';
 
+const Layout = ({ children }) => {
   const currentTheme = themes.standard;
 
   return (
     <Theme theme={currentTheme}>
-      <Container>
+      <S.Container>
         {children}
-      </Container>
+      </S.Container>
     </Theme>
   );
 };
