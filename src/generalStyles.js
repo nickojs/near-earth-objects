@@ -18,7 +18,8 @@ export const Button = styled.button`
   padding: 6px 24px;
   border: 2px solid lightblue;
   box-shadow: 0 0 10px lightblue;
-  font-weight: bold;
+  font-weight: 700;
+  font-family: inherit;
   color: white;
   cursor: pointer;
   transition: .5s ease;

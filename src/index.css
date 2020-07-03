@@ -47,7 +47,6 @@ table {
 	border-spacing: 0;
 }
 
-*{ box-sizing: border-box; }
 button{ 
 	border: none;
 	margin: 0;
@@ -58,3 +57,6 @@ button{
 	background: transparent;
 	line-height: normal;
 }
+
+*{ box-sizing: border-box; }
+body, input { font-family: 'Oxanium', cursive; }
