@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   color: ${({ theme }) => theme.color};
   background: ${({ theme }) => theme.dark};
+
+  border: 1px solid ${({ theme }) => theme.light};
+  box-shadow: 0 0 10px ${({ theme }) => theme.light};
 `;
 
 export const Title = styled.div`
