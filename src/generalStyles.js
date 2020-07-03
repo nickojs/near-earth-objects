@@ -6,6 +6,9 @@ export const Container = styled.div`
 
   border: 1px solid ${({ theme }) => theme.light};
   box-shadow: 0 0 10px ${({ theme }) => theme.light};
+
+  max-width: 900px;
+  margin: 0 auto;
 `;
 
 export const Title = styled.div`
