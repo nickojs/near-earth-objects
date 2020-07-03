@@ -1,12 +1,15 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-const theme = {
+const standard = {
   // to be defined...
+  dark: '#151618',
+  light: '#3F586C',
+  color: '#FFF'
 };
 
 const Theme = ({ children }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  <ThemeProvider theme={standard}>{children}</ThemeProvider>
 );
 
 export default Theme;
