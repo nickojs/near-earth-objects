@@ -1,8 +1,22 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const disabled = css`
+  border: 0;
+  box-shadow: 0;
+
+  color: grey;
+  background: 
+    linear-gradient(45deg, 
+      #eddc5f 25%, #000000 25%, 
+      #000000 50%, #eddc5f 50%, 
+      #eddc5f 75%, #000000 75%, 
+      #000000 100%);
+  background-size: 56.57px 56.57px;
+`;
 
 export const Container = styled.div`
   color: ${({ theme }) => theme.color};
-  background: ${({ theme }) => theme.dark};
+  background: ${({ theme }) => theme.darkOp};
 
   border: 1px solid ${({ theme }) => theme.light};
   box-shadow: 0 0 10px ${({ theme }) => theme.light};
@@ -17,7 +31,7 @@ export const Title = styled.div`
   min-width: 100%;
   padding: 12px;
 
-  background: ${({ theme }) => theme.light};
+  background: ${({ theme }) => theme.lightOp};
 `;
 
 export const Button = styled.button`
@@ -30,7 +44,9 @@ export const Button = styled.button`
   
   border: 2px solid ${({ theme }) => theme.light};
   box-shadow: 0 0 8px ${({ theme }) => theme.light};
+  
   color: ${({ theme }) => theme.color};
+  background: ${({ theme }) => theme.dark};
 
   :hover{ 
     background: white;
@@ -38,7 +54,5 @@ export const Button = styled.button`
   }
 
   :active{ transform: translateX(-5px); }
-
-  :disabled{ background: grey; color: white; }
-  
+  :disabled{ ${disabled}; }
 `;
