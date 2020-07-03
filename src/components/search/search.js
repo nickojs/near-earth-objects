@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import { Container, Title, Button } from '../../generalStyles';
 import * as S from './styles';
 
-const Search = () => {
+const Search = ({ setQuery }) => {
   const [initialDate, setInitialDate] = useState('');
   const [finalDate, setFinalDate] = useState('');
+
+  const queryHandler = () => {
+    const query = `feed?start_date=${initialDate}&end_date=${finalDate}`;
+    setQuery(query);
+  };
 
   return (
     <Container>
@@ -29,6 +34,7 @@ const Search = () => {
         </S.InputWrapper>
         <Button
           type="button"
+          onClick={queryHandler}
           disabled={initialDate.length <= 0 || finalDate.length <= 0}
         >Search
         </Button>
