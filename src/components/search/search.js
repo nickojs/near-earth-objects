@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container, Title, Button } from '../../generalStyles';
 import * as S from './styles';
 
 const Search = () => {
@@ -6,8 +7,8 @@ const Search = () => {
   const [finalDate, setFinalDate] = useState('');
 
   return (
-    <S.Container>
-      <S.Title>Search parameters</S.Title>
+    <Container>
+      <Title>Search parameters</Title>
       <S.Inputs>
         <S.InputWrapper>
           <label htmlFor="initialDate">Initial Date</label>
@@ -26,14 +27,14 @@ const Search = () => {
             onChange={(event) => setFinalDate(event.target.value)}
           />
         </S.InputWrapper>
-        <S.SearchButton
+        <Button
           type="button"
           disabled={initialDate.length <= 0 || finalDate.length <= 0}
         >Search
-        </S.SearchButton>
+        </Button>
 
       </S.Inputs>
-    </S.Container>
+    </Container>
   );
 };
 
