@@ -32,4 +32,7 @@ export const Button = styled.button`
   }
 
   :active{ transform: translateX(-5px); }
+
+  :disabled{ background: grey; color: white; }
+  
 `;
