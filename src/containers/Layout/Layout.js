@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Theme from '../../Theme';
+import themes from './themes.json';
 
 const Layout = ({ children }) => {
   const Container = styled.div`
@@ -10,15 +11,10 @@ const Layout = ({ children }) => {
     margin: 0 auto;
   `;
 
-  // themes (will belong to its own file later on)
-  const standard = {
-    dark: '#151618',
-    light: '#3F586C',
-    color: '#FFF'
-  };
+  const currentTheme = themes.standard;
 
   return (
-    <Theme theme={standard}>
+    <Theme theme={currentTheme}>
       <Container>
         {children}
       </Container>
