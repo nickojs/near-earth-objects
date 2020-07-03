@@ -1,10 +1,14 @@
 import React from 'react';
+import Theme from './Theme';
+import Search from './components/search/search';
 
 function App() {
   return (
-    <div>
-      <h1> Miss me yet ? </h1>
-    </div>
+    <Theme>
+      <div style={{ width: '80%', maxWidth: '1200px', margin: '0 auto' }}>
+        <Search />
+      </div>
+    </Theme>
   );
 }
 
