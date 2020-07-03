@@ -1,8 +1,8 @@
 import React from 'react';
 import * as S from './styles';
 
-const Dialog = ({ children }) => (
-  <S.Container>
+const Dialog = ({ children, type }) => (
+  <S.Container type={type}>
     {children}
   </S.Container>
 );
