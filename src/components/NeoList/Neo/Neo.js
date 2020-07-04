@@ -28,15 +28,15 @@ const Neo = ({ object }) => {
       <S.NeoSubData>
         <S.NeoSubDataInfo>
           <p>magnitude</p>
-          <p>{object.magnitude}</p>
+          <p>{String(object.magnitude)}</p>
         </S.NeoSubDataInfo>
         <S.NeoSubDataInfo>
           <p>hazardous</p>
-          <p>{object.hazardous}</p>
+          <p>{String(object.hazardous)}</p>
         </S.NeoSubDataInfo>
         <S.NeoSubDataInfo>
           <p>sentry</p>
-          <p>{object.sentry}</p>
+          <p>{String(object.sentry)}</p>
         </S.NeoSubDataInfo>
       </S.NeoSubData>
       <table>
