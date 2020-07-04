@@ -2,12 +2,12 @@ export default (neo) => {
   const preview = {
     id: neo.id,
     name: neo.name,
-    url: neo.url,
+    url: neo.nasa_jpl_url,
 
     magnitude: neo.absolute_magnitude_h,
     hazardous: neo.is_potentially_hazardous_asteroid,
     sentry: neo.is_sentry_object,
-    orbiting: neo.orbiting_body,
+    orbiting: neo.close_approach_data.orbiting_body,
 
     diameter: {
       kilometers: {
