@@ -1,29 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Title } from '../../generalStyles';
 import * as S from './styles';
 
 const Neo = ({ object }) => {
-  const a = 1;
+  const [toggle, setToggle] = useState(false);
+
+  const previewHandler = () => setToggle(!toggle);
 
   return (
     <S.NeoContainer>
-      <Title href={object.nasa_jpl_url}>
+      <Title>
         {object.name} || {object.id}
+        {/* <a href={object.nasa_jpl_url}>
+        </a> */}
       </Title>
-      <hr />
-      <p>magnitude: {object.absolute_magnitude_h}</p>
-      <p>Is Hazardous: {object.is_potentially_hazardous_asteroid.toString()}</p>
-      <p>Is Sentry: {object.is_sentry_object.toString()}</p>
-      <hr />
-      <p>Estimated Diameter (in KM):
-        Min: {object.estimated_diameter.kilometers.estimated_diameter_min}
-        Max: {object.estimated_diameter.kilometers.estimated_diameter_max}
-      </p>
-      <hr />
-      <p>Close approach data: {object.close_approach_data[0].close_approach_date_full} </p>
-      <p>Velocity: {object.close_approach_data[0].relative_velocity.kilometers_per_second} KM/s </p>
-      <p>Miss distance: {object.close_approach_data[0].miss_distance.kilometers} KMs </p>
-      <p>Orbiting body: {object.close_approach_data[0].orbiting_body} </p>
+      <S.NeoSubData>
+        <S.NeoSubDataInfo>
+          <p>magnitude</p>
+          <p>{object.absolute_magnitude_h}</p>
+        </S.NeoSubDataInfo>
+        <S.NeoSubDataInfo>
+          <p>hazardous</p>
+          <p>{object.is_potentially_hazardous_asteroid.toString()}</p>
+        </S.NeoSubDataInfo>
+        <S.NeoSubDataInfo>
+          <p>sentry</p>
+          <p>{object.is_sentry_object.toString()}</p>
+        </S.NeoSubDataInfo>
+      </S.NeoSubData>
+      <S.NeoBtn
+        type="button"
+        onClick={previewHandler}
+      >
+        View details
+      </S.NeoBtn>
+      <S.NeoBtn
+        type="button"
+        onClick={() => console.log('saved :', object)}
+      >
+        Save to collection
+      </S.NeoBtn>
+      {/* details will be fetched upon View Details button click */}
     </S.NeoContainer>
   );
 };
