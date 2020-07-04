@@ -1,8 +1,8 @@
 import React from 'react';
-import Neo from './Neo';
+import Neo from './Neo/Neo';
 import { Title, Container } from '../../generalStyles';
 import * as S from './styles';
-import example from './example.json';
+import example from './Neo/example.json';
 
 const NeoList = ({ title, list }) => {
   // 'NEO' stands for 'Near Earth Objects'

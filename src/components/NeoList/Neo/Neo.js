@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Title } from '../../generalStyles';
+import { Title } from '../../../generalStyles';
 import * as S from './styles';
-import useRequest from '../../hooks/request';
+import useRequest from '../../../hooks/request';
 
 const Neo = ({ object }) => {
   const [options, setOptions] = useState(null);
