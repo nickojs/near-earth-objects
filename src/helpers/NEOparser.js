@@ -7,7 +7,7 @@ export default (neo) => {
     magnitude: neo.absolute_magnitude_h,
     hazardous: neo.is_potentially_hazardous_asteroid,
     sentry: neo.is_sentry_object,
-    orbiting: neo.close_approach_data.orbiting_body,
+    orbiting: neo.close_approach_data[0].orbiting_body,
 
     diameter: {
       kilometers: {
