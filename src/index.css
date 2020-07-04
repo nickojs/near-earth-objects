@@ -60,3 +60,4 @@ button{
 
 *{ box-sizing: border-box; }
 body, input { font-family: 'Oxanium', cursive; }
+body{ background: url(./assets/image/background.jpg); }
