@@ -28,7 +28,7 @@ const Neo = ({ object }) => {
       <S.NeoSubData>
         <S.NeoSubDataInfo>
           <p>magnitude</p>
-          <p>{String(object.magnitude)}</p>
+          <p>{object.magnitude}</p>
         </S.NeoSubDataInfo>
         <S.NeoSubDataInfo>
           <p>hazardous</p>
@@ -39,35 +39,44 @@ const Neo = ({ object }) => {
           <p>{String(object.sentry)}</p>
         </S.NeoSubDataInfo>
       </S.NeoSubData>
-      <table>
+      <S.NeoTable>
+        <caption>Estimated diameter</caption>
         <thead>
           <tr>
-            <th>Estimated diameter</th>
+            <th>unit</th>
+            <th>min</th>
+            <th>max</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>kilometers</td>
-            <td>Min: {object.diameter.kilometers.min} </td>
-            <td>Max: {object.diameter.kilometers.max} </td>
+            <td>{Number(object.diameter.kilometers.min).toFixed(2)} </td>
+            <td>{Number(object.diameter.kilometers.max).toFixed(2)} </td>
           </tr>
           <tr>
             <td>meters</td>
-            <td>Min: {object.diameter.meters.min} </td>
-            <td>Max: {object.diameter.meters.max} </td>
+            <td>{Number(object.diameter.meters.min).toFixed(2)} </td>
+            <td>{Number(object.diameter.meters.max).toFixed(2)} </td>
           </tr>
           <tr>
             <td>miles</td>
-            <td>Min: {object.diameter.miles.min} </td>
-            <td>Max: {object.diameter.miles.max} </td>
+            <td>{Number(object.diameter.miles.min).toFixed(2)} </td>
+            <td>{Number(object.diameter.miles.max).toFixed(2)} </td>
           </tr>
           <tr>
             <td>feet</td>
-            <td>Min: {object.diameter.feet.min} </td>
-            <td>Max: {object.diameter.feet.max} </td>
+            <td>{Number(object.diameter.feet.min).toFixed(2)} </td>
+            <td>{Number(object.diameter.feet.max).toFixed(2)} </td>
           </tr>
         </tbody>
-      </table>
+      </S.NeoTable>
+
+      <div>
+        {/* details will be fetched upon View Details button click */}
+        <Status loading={loading} error={error} />
+      </div>
+
       <S.NeoBtn
         type="button"
         onClick={requestDetails}
@@ -80,10 +89,6 @@ const Neo = ({ object }) => {
       >
         Save to collection
       </S.NeoBtn>
-      <div>
-        {/* details will be fetched upon View Details button click */}
-        <Status loading={loading} error={error} />
-      </div>
     </S.NeoContainer>
   );
 };
