@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { Title } from '../../../generalStyles';
+
 import * as S from './styles';
+import { Title } from '../../../generalStyles';
+import Status from '../../status/status';
+
 import useRequest from '../../../hooks/request';
 
 const Neo = ({ object }) => {
   const [options, setOptions] = useState(null);
   const [requestData] = useRequest(options);
+  const { data, loading, error } = requestData;
 
   const requestDetails = () => {
     setOptions({
@@ -24,17 +28,46 @@ const Neo = ({ object }) => {
       <S.NeoSubData>
         <S.NeoSubDataInfo>
           <p>magnitude</p>
-          <p>{object.absolute_magnitude_h}</p>
+          <p>{object.magnitude}</p>
         </S.NeoSubDataInfo>
         <S.NeoSubDataInfo>
           <p>hazardous</p>
-          <p>{object.is_potentially_hazardous_asteroid.toString()}</p>
+          <p>{object.hazardous}</p>
         </S.NeoSubDataInfo>
         <S.NeoSubDataInfo>
           <p>sentry</p>
-          <p>{object.is_sentry_object.toString()}</p>
+          <p>{object.sentry}</p>
         </S.NeoSubDataInfo>
       </S.NeoSubData>
+      <table>
+        <thead>
+          <tr>
+            <th>Estimated diameter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>kilometers</td>
+            <td>Min: {object.diameter.kilometers.min} </td>
+            <td>Max: {object.diameter.kilometers.max} </td>
+          </tr>
+          <tr>
+            <td>meters</td>
+            <td>Min: {object.diameter.meters.min} </td>
+            <td>Max: {object.diameter.meters.max} </td>
+          </tr>
+          <tr>
+            <td>miles</td>
+            <td>Min: {object.diameter.miles.min} </td>
+            <td>Max: {object.diameter.miles.max} </td>
+          </tr>
+          <tr>
+            <td>feet</td>
+            <td>Min: {object.diameter.feet.min} </td>
+            <td>Max: {object.diameter.feet.max} </td>
+          </tr>
+        </tbody>
+      </table>
       <S.NeoBtn
         type="button"
         onClick={requestDetails}
@@ -47,7 +80,10 @@ const Neo = ({ object }) => {
       >
         Save to collection
       </S.NeoBtn>
-      {/* details will be fetched upon View Details button click */}
+      <div>
+        {/* details will be fetched upon View Details button click */}
+        <Status loading={loading} error={error} />
+      </div>
     </S.NeoContainer>
   );
 };
