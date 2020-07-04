@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Search from '../../components/search/search';
+import NeoList from '../../components/NeoList/NeoList';
 import Loading from '../../components/loading/loading';
 import Dialog from '../../components/dialog/dialog';
 
@@ -19,6 +20,16 @@ const Core = () => {
     setOptions(values);
   };
 
+  const nearEarthObjects = data?.near_earth_objects;
+  const neoList = nearEarthObjects && 
+    Object
+    .keys(nearEarthObjects)
+    .map(key => 
+      (<NeoList 
+          key={key} 
+          title={key}
+          list={nearEarthObjects[key]} />));
+
   return (
     <div>
       <Search setQuery={optionsHandler} />
@@ -35,7 +46,7 @@ const Core = () => {
           <p>{error.error.code}</p>
         </Dialog>
       )}
-
+      {neoList}
     </div>
   );
 };
