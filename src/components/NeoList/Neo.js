@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { Title } from '../../generalStyles';
 import * as S from './styles';
+import useRequest from '../../hooks/request';
 
 const Neo = ({ object }) => {
-  const [toggle, setToggle] = useState(false);
+  const [options, setOptions] = useState(null);
+  const [requestData] = useRequest(options);
 
-  const previewHandler = () => setToggle(!toggle);
+  const requestDetails = () => {
+    setOptions({
+      method: 'GET',
+      url: `https://api.nasa.gov/neo/rest/v1/neo/${object.id}?api_key=${process.env.REACT_APP_API_KEY}`
+    });
+  };
 
   return (
     <S.NeoContainer>
@@ -30,7 +37,7 @@ const Neo = ({ object }) => {
       </S.NeoSubData>
       <S.NeoBtn
         type="button"
-        onClick={previewHandler}
+        onClick={requestDetails}
       >
         View details
       </S.NeoBtn>
