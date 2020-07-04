@@ -12,7 +12,7 @@ const move = keyframes`
 export const Bar = styled.div`
   --primary: ${({ theme }) => theme.light};
   --secundary: ${({ theme }) => theme.dark};
-  width: 200px; height: 24px; margin: 12px;
+  width: 100%; height: 24px; margin: 12px;
   box-shadow: 0 0 10px black;
   background-image: 
     repeating-linear-gradient(
