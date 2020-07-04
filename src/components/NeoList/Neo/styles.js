@@ -21,6 +21,10 @@ export const NeoSubDataInfo = styled.li`
   text-align: center;
 `;
 
+export const NeoBoolean = styled.p`
+  color: ${({ bool }) => (bool ? 'red' : 'green')};
+`;
+
 export const NeoBtn = styled.button`
   align-self: flex-end;
   cursor: pointer;

@@ -32,11 +32,11 @@ const Neo = ({ object }) => {
         </S.NeoSubDataInfo>
         <S.NeoSubDataInfo>
           <p>hazardous</p>
-          <p>{String(object.hazardous)}</p>
+          <S.NeoBoolean bool={object.hazardous}>{String(object.hazardous)}</S.NeoBoolean>
         </S.NeoSubDataInfo>
         <S.NeoSubDataInfo>
           <p>sentry</p>
-          <p>{String(object.sentry)}</p>
+          <S.NeoBoolean bool={object.sentry}>{String(object.sentry)}</S.NeoBoolean>
         </S.NeoSubDataInfo>
       </S.NeoSubData>
       <S.NeoTable>
