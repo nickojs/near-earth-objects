@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Search from '../../components/search/search';
-import NeoList from '../../components/NeoList/NeoList';
+import NeoList from '../../components/neoList/neoList';
 import Status from '../../components/status/status';
 
 import useRequest from '../../hooks/request';

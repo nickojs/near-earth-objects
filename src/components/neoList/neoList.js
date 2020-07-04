@@ -1,8 +1,8 @@
 import React from 'react';
-import Neo from './Neo/Neo';
+import Neo from './neo/neo';
 import { Title, Container } from '../../generalStyles';
 import * as S from './styles';
-import example from './Neo/example.json';
+import example from './neo/example.json';
 import parser from '../../helpers/NEOparser';
 
 const NeoList = ({ title, list }) => {
