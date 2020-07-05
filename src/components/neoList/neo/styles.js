@@ -47,6 +47,7 @@ export const NeoSmallText = styled.p`
 
 export const DetailsContainer = styled.div`
   text-align: center;
+  ${({ toggle }) => (toggle ? 'display: none;' : 'display: block;')}
 `;
 
 export const CloseApproaches = styled(DetailsContainer)`

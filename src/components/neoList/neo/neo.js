@@ -9,14 +9,20 @@ import useRequest from '../../../hooks/request';
 
 const Neo = ({ object }) => {
   const [options, setOptions] = useState(null);
+  const [toggle, setToggle] = useState(true);
   const [requestData] = useRequest(options);
   const { data, loading, error } = requestData;
 
-  const requestDetails = () => {
-    setOptions({
-      method: 'GET',
-      url: `https://api.nasa.gov/neo/rest/v1/neo/${object.id}?api_key=${process.env.REACT_APP_API_KEY}`
-    });
+  const showDetails = () => {
+    if (options) { return setToggle(!toggle); }
+
+    if (!options) {
+      setOptions({
+        method: 'GET',
+        url: `https://api.nasa.gov/neo/rest/v1/neo/${object.id}?api_key=${process.env.REACT_APP_API_KEY}`
+      });
+      setToggle(!toggle);
+    }
   };
 
   return (
@@ -52,14 +58,14 @@ const Neo = ({ object }) => {
         ))}
       </S.DetailsContainer>
 
-      {data && <Details data={data} />}
+      {data && <Details data={data} toggle={toggle} />}
       <Status loading={loading} error={error} />
 
       <S.NeoBtn
         type="button"
-        onClick={requestDetails}
+        onClick={showDetails}
       >
-        View details
+        {toggle ? 'Show' : 'Hide' } details
       </S.NeoBtn>
       <S.NeoBtn
         type="button"

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { details as detailsParser } from '../../../helpers/NEOparser';
 import * as S from './styles';
 
-const Details = ({ data }) => {
+const Details = ({ data, toggle }) => {
   const [details, setDetails] = useState(null);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Details = ({ data }) => {
   );
 
   return (
-    <S.DetailsContainer>
+    <S.DetailsContainer toggle={toggle}>
       <S.NeoSmallTitle>close approaches</S.NeoSmallTitle>
       {closeApproachList}
     </S.DetailsContainer>
