@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import * as S from './styles';
 import { Title } from '../../../generalStyles';
 import Status from '../../status/status';
+import Details from './details';
 
 import useRequest from '../../../hooks/request';
 
@@ -72,10 +73,8 @@ const Neo = ({ object }) => {
         </tbody>
       </S.NeoTable>
 
-      <div>
-        {/* details will be fetched upon View Details button click */}
-        <Status loading={loading} error={error} />
-      </div>
+      {data && <Details data={data} />}
+      <Status loading={loading} error={error} />
 
       <S.NeoBtn
         type="button"
