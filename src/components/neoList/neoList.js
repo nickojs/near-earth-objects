@@ -11,7 +11,6 @@ const NeoList = ({ title, list }) => {
 
   const neos = example.map((each) => {
     const parsedObj = preview(each);
-    console.log(preview);
     return <Neo key={each.id} object={parsedObj} />;
   });
 
