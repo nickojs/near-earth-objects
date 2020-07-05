@@ -40,36 +40,18 @@ const Neo = ({ object }) => {
           <S.NeoBoolean bool={object.sentry}>{String(object.sentry)}</S.NeoBoolean>
         </S.NeoSubDataInfo>
       </S.NeoSubData>
+      <S.NeoSmallTitle>estimated diameter</S.NeoSmallTitle>
       <S.NeoTable>
-        <caption>Estimated diameter</caption>
-        <thead>
-          <tr>
-            <th>unit</th>
-            <th>min</th>
-            <th>max</th>
-          </tr>
-        </thead>
         <tbody>
-          <tr>
-            <td>kilometers</td>
-            <td>{Number(object.diameter.kilometers.min).toFixed(2)} </td>
-            <td>{Number(object.diameter.kilometers.max).toFixed(2)} </td>
-          </tr>
-          <tr>
-            <td>meters</td>
-            <td>{Number(object.diameter.meters.min).toFixed(2)} </td>
-            <td>{Number(object.diameter.meters.max).toFixed(2)} </td>
-          </tr>
-          <tr>
-            <td>miles</td>
-            <td>{Number(object.diameter.miles.min).toFixed(2)} </td>
-            <td>{Number(object.diameter.miles.max).toFixed(2)} </td>
-          </tr>
-          <tr>
-            <td>feet</td>
-            <td>{Number(object.diameter.feet.min).toFixed(2)} </td>
-            <td>{Number(object.diameter.feet.max).toFixed(2)} </td>
-          </tr>
+          {Object.keys(object.diameter).map((each) => (
+            <tr>
+              <td>{each}</td>
+              <td>{Number(object.diameter[each].min).toFixed(2)}</td>
+              <td> ~ </td>
+              <td>{Number(object.diameter[each].max).toFixed(2)}</td>
+            </tr>
+
+          ))}
         </tbody>
       </S.NeoTable>
 
