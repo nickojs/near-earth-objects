@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { details as detailsParser } from '../../../helpers/NEOparser';
 
-const Details = (props) => {
-  console.log(props);
+const Details = ({ data }) => {
+  const [details, setDetails] = useState(null);
+
+  useEffect(() => {
+    if (data) {
+      const parsedData = detailsParser(data);
+      setDetails(parsedData);
+    }
+  }, [data]);
+
   return (
     <div>
       details
