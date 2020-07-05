@@ -14,7 +14,7 @@ const Status = ({ loading, error }) => {
     <Dialog type="danger">
       <p>Oops, something went wrong!</p>
       <br />
-      <p>{error.error.code}</p>
+      <p>{error?.error_message}</p>
     </Dialog>
   );
 
