@@ -35,34 +35,35 @@ export const NeoBtn = styled.button`
   }
 `;
 
-export const DetailsContainer = styled.div`
-  text-align: center;
-`;
-
 export const NeoSmallTitle = styled.p`
-  padding: 4px;
+  padding: 4px 0;
   margin-top: 8px;
   font-weight: 700;
 `;
 
 export const NeoSmallText = styled.p`
-  padding: 4px;
+  padding: 4px 0;
 `;
 
-export const NeoTable = styled.table`
-  width: 100%;
-  overflow-x: auto;
-  margin-bottom: 12px;
-  text-align: left; 
+export const DetailsContainer = styled.div`
+  text-align: center;
+`;
 
-  tbody tr {
-    td{ 
-      padding: 12px 4px;
-      :last-child { text-align: right; }
-    }
-    :hover{ 
-      background: ${({ theme }) => theme.dark}
+export const CloseApproaches = styled(DetailsContainer)`
+  margin-top: 12px;
+`;
+
+export const CloseApproachList = styled.ul`
+  max-height: 200px; 
+  overflow-y: auto;
+  
+  li{
+    text-align: left;
+    margin: 6px; padding: 6px;
+    border: 1px solid white;
+
+    :hover{
+      background: ${({ theme }) => theme.dark};
     }
   }
-
 `;
