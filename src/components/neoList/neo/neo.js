@@ -40,20 +40,17 @@ const Neo = ({ object }) => {
           <S.NeoBoolean bool={object.sentry}>{String(object.sentry)}</S.NeoBoolean>
         </S.NeoSubDataInfo>
       </S.NeoSubData>
-      <S.NeoSmallTitle>estimated diameter</S.NeoSmallTitle>
-      <S.NeoTable>
-        <tbody>
-          {Object.keys(object.diameter).map((each) => (
-            <tr>
-              <td>{each}</td>
-              <td>{Number(object.diameter[each].min).toFixed(2)}</td>
-              <td> ~ </td>
-              <td>{Number(object.diameter[each].max).toFixed(2)}</td>
-            </tr>
-
-          ))}
-        </tbody>
-      </S.NeoTable>
+      <S.DetailsContainer>
+        <S.NeoSmallTitle>estimated diameter</S.NeoSmallTitle>
+        {Object.keys(object.diameter).map((each) => (
+          <S.NeoSmallText key={each}>
+            {Number(object.diameter[each].min).toFixed(2)}
+            {' '}~{' '}
+            {Number(object.diameter[each].max).toFixed(2)}
+            {' '}{each}
+          </S.NeoSmallText>
+        ))}
+      </S.DetailsContainer>
 
       {data && <Details data={data} />}
       <Status loading={loading} error={error} />

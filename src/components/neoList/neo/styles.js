@@ -35,27 +35,34 @@ export const NeoBtn = styled.button`
   }
 `;
 
+export const DetailsContainer = styled.div`
+  text-align: center;
+`;
+
+export const NeoSmallTitle = styled.p`
+  padding: 4px;
+  margin-top: 8px;
+  font-weight: 700;
+`;
+
+export const NeoSmallText = styled.p`
+  padding: 4px;
+`;
+
 export const NeoTable = styled.table`
   width: 100%;
   overflow-x: auto;
   margin-bottom: 12px;
-  caption{ 
-    padding: 12px; 
-    background: ${({ theme }) => theme.dark}; 
-  }
+  text-align: left; 
 
-  thead{ 
-    text-align: left; 
-    background: ${({ theme }) => theme.dark};
-  }
-  
-  tbody tr{
-    background: ${({ theme }) => theme.light};
-    :nth-of-type(2n){ 
-      background: ${({ theme }) => theme.lightOp};
+  tbody tr {
+    td{ 
+      padding: 12px 4px;
+      :last-child { text-align: right; }
+    }
+    :hover{ 
+      background: ${({ theme }) => theme.dark}
     }
   }
 
-  tr th{ font-weight: 700; }
-  tr th, tr td{ padding: 4px; }
 `;
