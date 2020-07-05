@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Search from '../../components/search/search';
 import NeoList from '../../components/neoList/neoList';
 import Status from '../../components/status/status';
+import * as S from './styles';
 
 import useRequest from '../../hooks/request';
 
@@ -31,7 +32,9 @@ const Core = () => {
   return (
     <div>
       <Search setQuery={optionsHandler} />
-      {neoList}
+      <S.Results>
+        {neoList}
+      </S.Results>
       <Status loading={loading} error={error} />
     </div>
   );

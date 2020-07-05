@@ -10,6 +10,7 @@ const Layout = ({ children }) => {
   return (
     <Theme theme={currentTheme}>
       <S.Container>
+        <S.Title>Near Earth Objects Analyzer</S.Title>
         {children}
       </S.Container>
     </Theme>
