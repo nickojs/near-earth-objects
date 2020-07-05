@@ -1,25 +1,30 @@
-import React from 'react';
-import Neo from './neo/neo';
-import { Title, Container } from '../../generalStyles';
+import React, { useState } from 'react';
 import * as S from './styles';
-import example from './neo/example.json';
+import { Title, Container, TogglableContainer } from '../../generalStyles';
+import Neo from './neo/neo';
 import { preview } from '../../helpers/NEOparser';
 
 const NeoList = ({ title, list }) => {
   // 'NEO' stands for 'Near Earth Objects'
   // 'list' is a set of NEOs for a given date, i.e:
+  const [toggle, setToggle] = useState(true);
 
-  const neos = example.map((each) => {
+  const neos = list.map((each) => {
     const parsedObj = preview(each);
     return <Neo key={each.id} object={parsedObj} />;
   });
 
+  const toggleHandler = () => setToggle(!toggle);
+
   return (
     <Container>
-      <Title>{title}</Title>
-      <S.NeoListContainer>
-        {neos}
-      </S.NeoListContainer>
+      <Title onClick={toggleHandler}>{title}</Title>
+      <TogglableContainer toggle={toggle}>
+        <S.NeoListContainer>
+          {neos}
+        </S.NeoListContainer>
+
+      </TogglableContainer>
     </Container>
   );
 };

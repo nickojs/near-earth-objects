@@ -25,6 +25,10 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
+export const TogglableContainer = styled.div`
+  ${({ toggle }) => (toggle ? 'display: none;' : 'display: block;')}
+`;
+
 export const Title = styled.div`
   display: block;
   width: 100%;
