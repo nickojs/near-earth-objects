@@ -23,6 +23,7 @@ const Core = () => {
   const neoList = nearEarthObjects &&
     Object
     .keys(nearEarthObjects)
+    .sort()
     .map(key =>
       (<NeoList
           key={key}
