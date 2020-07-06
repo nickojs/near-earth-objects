@@ -1,16 +1,16 @@
 import React from 'react';
-import themes from './themes.json';
+import { useSelector } from 'react-redux';
 
 import * as S from './styles';
+import { ExternalTitle } from '../../generalStyles';
 import Theme from '../../Theme';
 import Navbar from '../../components/navbar/navbar';
-import { ExternalTitle } from '../../generalStyles';
 
 const Layout = ({ children }) => {
-  const currentTheme = themes.standard;
+  const { all, currentTheme } = useSelector((state) => state.theme);
 
   return (
-    <Theme theme={currentTheme}>
+    <Theme theme={all[currentTheme]}>
       <Navbar />
       <S.Container>
         <ExternalTitle>Near Earth Objects Analyzer</ExternalTitle>

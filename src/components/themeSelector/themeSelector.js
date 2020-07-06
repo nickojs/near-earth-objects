@@ -1,19 +1,20 @@
 import React from 'react';
-import themes from '../../containers/Layout/themes.json';
+import { useSelector } from 'react-redux';
 import * as S from './styles';
 
 const ThemeSelector = ({ show, clicked }) => {
-  const themeKeys = Object.keys(themes);
+  const { all } = useSelector((state) => state.theme);
+  const themeKeys = Object.keys(all);
 
   return (
     <S.ThemeContainer show={show} onClick={clicked}>
       <S.ThemeList>
-        {themeKeys.map((theme) => (
-          <S.ThemeOption key={theme}>
-            <p>{theme}</p>
+        {themeKeys.map((each) => (
+          <S.ThemeOption key={each}>
+            <p>{each}</p>
             <S.PreviewContainer>
-              <S.PreviewColor color={themes[theme].light} />
-              <S.PreviewColor color={themes[theme].dark} />
+              <S.PreviewColor color={all[each].light} />
+              <S.PreviewColor color={all[each].dark} />
             </S.PreviewContainer>
           </S.ThemeOption>
         ))}

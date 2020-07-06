@@ -6,14 +6,14 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 import collectionReducer from './store/collection';
-import requestReducer from './store/request';
+import themeReducer from './store/themes';
 
 import './index.css';
 import App from './App';
 
 const rootReducer = combineReducers({
   collection: collectionReducer,
-  request: requestReducer
+  theme: themeReducer
 });
 
 const store = createStore(
