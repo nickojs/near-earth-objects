@@ -5,13 +5,14 @@ import { ExternalTitle, Container } from '../../generalStyles';
 
 const Collection = () => {
   const { collection } = useSelector((state) => state);
-  const title = 'my collection';
 
   return (
     <div>
       <ExternalTitle>Collections</ExternalTitle>
       <Container>
-        {collection.map((each) => <Neo object={each} mode="collection" />)}
+        {collection.map((each) => (
+          <Neo key={each.id} object={each} mode="collection" />
+        ))}
       </Container>
     </div>
   );
