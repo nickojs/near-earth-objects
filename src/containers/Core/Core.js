@@ -34,13 +34,13 @@ const Core = () => {
       ));
 
   return (
-    <div>
+    <>
       <Search setQuery={optionsHandler} />
       <S.Results>
         {neoList}
       </S.Results>
       <Status loading={loading} error={error} />
-    </div>
+    </>
   );
 };
 
