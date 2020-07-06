@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import * as S from './styles';
 import { Title, Anchor } from '../../../generalStyles';
-import Status from '../../status/status';
 import Details from './details';
-import Notification from '../../notification/notification';
+import Status from '../../UI/status/status';
+import Notification from '../../UI/notification/notification';
 
 import useRequest from '../../../hooks/request';
 

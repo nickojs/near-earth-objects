@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Container as C } from '../../generalStyles';
+import { Container as C } from '../../../generalStyles';
 
 const danger = css`
   text-shadow: 0 0 1px red;

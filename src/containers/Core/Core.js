@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Search from '../../components/search/search';
 import NeoList from '../../components/neoList/neoList';
-import Status from '../../components/status/status';
+import Status from '../../components/UI/status/status';
 import * as S from './styles';
 
 import useRequest from '../../hooks/request';
