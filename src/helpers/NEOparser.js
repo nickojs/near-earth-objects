@@ -3,10 +3,11 @@ export const preview = (neo) => ({
   name: neo.name,
   url: neo.nasa_jpl_url,
 
-  magnitude: neo.absolute_magnitude_h,
-  hazardous: neo.is_potentially_hazardous_asteroid,
-  sentry: neo.is_sentry_object,
-  orbiting: neo.close_approach_data[0].orbiting_body,
+  info: {
+    magnitude: neo.absolute_magnitude_h,
+    hazardous: neo.is_potentially_hazardous_asteroid,
+    sentry: neo.is_sentry_object
+  },
 
   diameter: {
     kilometers: {
