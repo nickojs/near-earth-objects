@@ -62,5 +62,29 @@
     "light": "#383c3f",
     "color": "#FFF",
     "invertedColor": "#000"
+  },
+  "ore": {
+    "darkOp": "#10151995",
+    "dark": "#101519",
+    "lightOp": "#787b2495",
+    "light": "#787b24",
+    "color": "#FFF",
+    "invertedColor": "#000"
+  },
+  "sansha": {
+    "darkOp": "#12140f95",
+    "dark": "#12140f",
+    "lightOp": "#474e2c95",
+    "light": "#474e2c",
+    "color": "#FFF",
+    "invertedColor": "#000"
+  },
+  "carbon": {
+    "darkOp": "#11111395",
+    "dark": "#111113",
+    "lightOp": "#5e5e6095",
+    "light": "#5e5e60",
+    "color": "#FFF",
+    "invertedColor": "#000"
   }
 }
