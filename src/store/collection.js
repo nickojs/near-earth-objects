@@ -2,7 +2,7 @@ const initState = {
   collection: []
 };
 
-const rootReducer = (state = initState, action) => {
+const collectionReducer = (state = initState, action) => {
   switch (action.type) {
     case 'ADD':
       return { collection: [...state.collection, action.object] };
@@ -14,4 +14,4 @@ const rootReducer = (state = initState, action) => {
   }
 };
 
-export default rootReducer;
+export default collectionReducer;

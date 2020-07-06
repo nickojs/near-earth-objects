@@ -2,12 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { BrowserRouter } from 'react-router-dom';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './store/reducer';
+
+import collectionReducer from './store/collection';
+import requestReducer from './store/request';
 
 import './index.css';
 import App from './App';
+
+const rootReducer = combineReducers({
+  collection: collectionReducer,
+  request: requestReducer
+});
 
 const store = createStore(
   rootReducer,
