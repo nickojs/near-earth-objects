@@ -4,6 +4,7 @@ import themes from './themes.json';
 import * as S from './styles';
 import Theme from '../../Theme';
 import Navbar from '../../components/navbar/navbar';
+import { ExternalTitle } from '../../generalStyles';
 
 const Layout = ({ children }) => {
   const currentTheme = themes.standard;
@@ -12,7 +13,7 @@ const Layout = ({ children }) => {
     <Theme theme={currentTheme}>
       <Navbar />
       <S.Container>
-        <S.Title>Near Earth Objects Analyzer</S.Title>
+        <ExternalTitle>Near Earth Objects Analyzer</ExternalTitle>
         {children}
       </S.Container>
     </Theme>

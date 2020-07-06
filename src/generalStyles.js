@@ -57,6 +57,15 @@ export const Button = styled.button`
     color: ${({ theme }) => theme.invertedColor};
   }
 
-  :active{ transform: translateX(-5px); }
-  :disabled{ ${disabled}; }
+  :active{ transform: translateX(-5px) }
+  :disabled{ ${disabled} }
+`;
+
+export const ExternalTitle = styled.h1`
+  margin: 12px;
+
+  font-size: 3rem;
+  text-align: center;
+
+  color: white;
 `;
