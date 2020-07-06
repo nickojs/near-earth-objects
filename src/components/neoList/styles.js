@@ -9,4 +9,11 @@ export const NeoListContainer = styled.div`
   max-height: 600px;
   padding: 12px;
   overflow-y: auto;
+
+  @media(max-width: 500px){ 
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;

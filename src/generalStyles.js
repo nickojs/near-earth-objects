@@ -26,7 +26,7 @@ export const Container = styled.div`
 `;
 
 export const TogglableContainer = styled.div`
-  ${({ toggle }) => (toggle ? 'display: none;' : 'display: block;')}
+  ${({ toggle }) => (toggle ? 'display: block;' : 'display: none;')}
 `;
 
 export const Title = styled.div`
@@ -69,7 +69,8 @@ export const ExternalTitle = styled.h1`
   font-size: 3rem;
   text-align: center;
 
-  color: white;
+  color: ${({ theme }) => theme.light};
+  text-shadow: 0 0 10px ${({ theme }) => theme.lightOp};
 `;
 
 export const Anchor = styled.a`
@@ -79,4 +80,14 @@ export const Anchor = styled.a`
 
   :visited{ color: ${({ theme }) => theme.color}; }
   :hover{ font-weight: 700; }
+`;
+
+export const InlineButton = styled.button`
+  align-self: flex-end;
+  cursor: pointer;
+  color: ${({ theme }) => theme.light};
+
+  :hover{ 
+    color: ${({ theme }) => theme.lightOp};
+  }
 `;

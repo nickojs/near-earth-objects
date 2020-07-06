@@ -5,9 +5,14 @@ import { Container } from '../../../generalStyles';
 export const NeoContainer = styled(Container)`
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 250px;
   height: 100%;
   margin: 12px;
+
+  @media(max-width: 500px){ 
+    width: 100%;
+  }
+  
 `;
 
 export const NeoSubData = styled.ul`
@@ -23,16 +28,6 @@ export const NeoSubDataInfo = styled.li`
 
 export const NeoBoolean = styled.p`
   color: ${({ bool }) => (bool ? 'red' : 'green')};
-`;
-
-export const NeoBtn = styled.button`
-  align-self: flex-end;
-  cursor: pointer;
-  color: ${({ theme }) => theme.light};
-  
-  :hover{ 
-    color: ${({ theme }) => theme.lightOp};
-  }
 `;
 
 export const NeoSmallTitle = styled.p`

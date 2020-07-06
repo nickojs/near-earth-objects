@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import * as S from './styles';
-import { Title, Anchor } from '../../../generalStyles';
+import { Title, Anchor, InlineButton } from '../../../generalStyles';
 import Details from './details';
 import Status from '../../UI/status/status';
 import Notification from '../../UI/notification/notification';
@@ -54,11 +54,11 @@ const Neo = ({ object, mode }) => {
   }, [mode]);
 
   const buttons = (
-    <S.NeoBtn
+    <InlineButton
       type="button"
       onClick={remove ? removeFromCollection : addToCollection}
     > {remove ? 'Remove from' : 'Save to'} collection
-    </S.NeoBtn>
+    </InlineButton>
   );
 
   return (
@@ -98,11 +98,11 @@ const Neo = ({ object, mode }) => {
       {data && <Details data={data} toggle={toggle} />}
       <Status loading={loading} error={error} />
 
-      <S.NeoBtn
+      <InlineButton
         type="button"
         onClick={showDetails}
       > {toggle ? 'Show' : 'Hide' } details
-      </S.NeoBtn>
+      </InlineButton>
 
       {buttons}
     </S.NeoContainer>

@@ -19,7 +19,7 @@ const animCss = css`
 
 export const NotificationContainer = styled.div`
   position: absolute;
-  left: 50%; top: -10%;
+  left: 50%; top: -20%;
   transform: translate(-50%, 0);
 
   margin: 12px;

@@ -9,13 +9,15 @@ export const ThemeContainer = styled.div`
 `;
 
 export const ThemeList = styled.ul`
-  width: 20%;
+  width: 40%;
+  max-width: 200px;
+  min-width: 200px;
   height: 100%;
 
-  box-shadow: 0 0 0 1000px rgba(0, 0, 0, .6);
+  box-shadow: 0 0 0 4000px rgba(0, 0, 0, .6);
 
-  color: white;
-  background: black;
+  color: ${({ theme }) => theme.color};
+  background: rgba(0, 0, 0, .9);
 `;
 
 export const ThemeOption = styled.li`

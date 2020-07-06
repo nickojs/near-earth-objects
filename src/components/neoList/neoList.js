@@ -7,7 +7,7 @@ import { preview } from '../../helpers/NEOparser';
 const NeoList = ({ title, list }) => {
   // 'NEO' stands for 'Near Earth Objects'
   // 'list' is a set of NEOs for a given date, i.e:
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   const neos = list.map((each) => {
     const parsedObj = preview(each);
