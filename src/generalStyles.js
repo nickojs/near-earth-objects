@@ -69,3 +69,12 @@ export const ExternalTitle = styled.h1`
 
   color: white;
 `;
+
+export const Anchor = styled.a`
+  color: ${({ theme }) => theme.color};
+  text-decoration: none;
+  cursor: pointer;
+
+  :visited{ color: ${({ theme }) => theme.color}; }
+  :hover{ font-weight: 700; }
+`;
