@@ -1,11 +1,9 @@
-const initState = {
-  request: []
-};
+const initState = {};
 
 const requestReducer = (state = initState, action) => {
   switch (action.type) {
     case 'SAVE':
-      return { request: action.request };
+      return action.request;
     default: return state;
   }
 };
