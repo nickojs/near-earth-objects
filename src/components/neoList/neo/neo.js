@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import * as S from './styles';
-import { Title } from '../../../generalStyles';
+import { Title, Anchor } from '../../../generalStyles';
 import Status from '../../status/status';
 import Details from './details';
 
 import useRequest from '../../../hooks/request';
 
 const Neo = ({ object }) => {
-  const [options, setOptions] = useState(null);
   const [toggle, setToggle] = useState(true);
+  const [options, setOptions] = useState(null);
   const [requestData] = useRequest(options);
   const { data, loading, error } = requestData;
+
+  const { collection } = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const showDetails = () => {
     if (options) { return setToggle(!toggle); }
@@ -25,29 +29,35 @@ const Neo = ({ object }) => {
     }
   };
 
+  const addToCollectionHandler = () => {
+    const findEqual = collection.find((obj) => obj.id === object.id);
+    if (!findEqual) {
+      dispatch({ type: 'ADD', object });
+    }
+  };
+
   return (
     <S.NeoContainer>
       <Title>
-        {object.name} || {object.id}
-        {/* <a href={object.nasa_jpl_url}>
-        </a> */}
+        <Anchor href={object.url} target="_blank">
+          {object.name} || {object.id}
+        </Anchor>
       </Title>
       <S.NeoSubData>
-        <S.NeoSubDataInfo>
-          <p>magnitude</p>
-          <p>{object.magnitude}</p>
-        </S.NeoSubDataInfo>
-        <S.NeoSubDataInfo>
-          <p>hazardous</p>
-          <S.NeoBoolean bool={object.hazardous}>{String(object.hazardous)}</S.NeoBoolean>
-        </S.NeoSubDataInfo>
-        <S.NeoSubDataInfo>
-          <p>sentry</p>
-          <S.NeoBoolean bool={object.sentry}>{String(object.sentry)}</S.NeoBoolean>
-        </S.NeoSubDataInfo>
+
+        {Object.keys(object.info).map((info) => (
+          <S.NeoSubDataInfo key={info}>
+            <p>{info}</p>
+            <S.NeoBoolean bool={object.info[info]}>
+              {String(object.info[info])}
+            </S.NeoBoolean>
+          </S.NeoSubDataInfo>
+        ))}
+
       </S.NeoSubData>
       <S.DetailsContainer>
         <S.NeoSmallTitle>estimated diameter</S.NeoSmallTitle>
+
         {Object.keys(object.diameter).map((each) => (
           <S.NeoSmallText key={each}>
             {Number(object.diameter[each].min).toFixed(2)}
@@ -56,6 +66,7 @@ const Neo = ({ object }) => {
             {' '}{each}
           </S.NeoSmallText>
         ))}
+
       </S.DetailsContainer>
 
       {data && <Details data={data} toggle={toggle} />}
@@ -64,15 +75,15 @@ const Neo = ({ object }) => {
       <S.NeoBtn
         type="button"
         onClick={showDetails}
-      >
-        {toggle ? 'Show' : 'Hide' } details
+      > {toggle ? 'Show' : 'Hide' } details
       </S.NeoBtn>
+
       <S.NeoBtn
         type="button"
-        onClick={() => console.log('saved :', object)}
-      >
-        Save to collection
+        onClick={addToCollectionHandler}
+      > Save to collection
       </S.NeoBtn>
+
     </S.NeoContainer>
   );
 };
