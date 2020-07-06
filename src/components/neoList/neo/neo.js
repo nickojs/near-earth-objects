@@ -5,12 +5,15 @@ import * as S from './styles';
 import { Title, Anchor } from '../../../generalStyles';
 import Status from '../../status/status';
 import Details from './details';
+import Notification from '../../notification/notification';
 
 import useRequest from '../../../hooks/request';
 
 const Neo = ({ object, mode }) => {
   const [toggle, setToggle] = useState(true);
   const [remove, setRemove] = useState(false);
+  const [notification, setNotification] = useState(null);
+
   const [options, setOptions] = useState(null);
   const [requestData] = useRequest(options);
   const { data, loading, error } = requestData;
@@ -34,6 +37,7 @@ const Neo = ({ object, mode }) => {
     const findEqual = collection.find((obj) => obj.id === object.id);
     if (!findEqual) {
       dispatch({ type: 'ADD', object });
+      setNotification('Added object to collection');
     }
     setRemove(true);
   };
@@ -41,6 +45,7 @@ const Neo = ({ object, mode }) => {
   const removeFromCollection = () => {
     const filterCollection = collection.filter((obj) => obj.id !== object.id);
     dispatch({ type: 'UPDATE', collection: filterCollection });
+    setNotification('Removed object from collection');
     setRemove(false);
   };
 
@@ -58,6 +63,7 @@ const Neo = ({ object, mode }) => {
 
   return (
     <S.NeoContainer>
+      <Notification content={notification} />
       <Title>
         <Anchor href={object.url} target="_blank">
           {object.name} || {object.id}
