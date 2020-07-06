@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import * as S from './styles';
@@ -44,7 +44,11 @@ const Neo = ({ object, mode }) => {
     setRemove(false);
   };
 
-  const buttons = mode === 'collection' ? null : (
+  useEffect(() => {
+    if (mode === 'collection') { setRemove(true); }
+  }, [mode]);
+
+  const buttons = (
     <S.NeoBtn
       type="button"
       onClick={remove ? removeFromCollection : addToCollection}
