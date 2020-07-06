@@ -21,7 +21,11 @@ const Navbar = () => {
       <header>
         <S.NavbarContainer>
           {size < 500
-          && <InlineButton type="button" onClick={expandHandler}>{expand ? 'Close' : 'Open'} menu</InlineButton>}
+          && (
+            <InlineButton type="button" onClick={expandHandler}>
+              {expand ? 'Close' : 'Open'} menu
+            </InlineButton>
+          )}
 
           <TogglableContainer toggle={expand}>
             <S.Navbar>
