@@ -91,3 +91,13 @@ export const InlineButton = styled.button`
     color: ${({ theme }) => theme.lightOp};
   }
 `;
+
+export const SmallTitle = styled.p`
+  padding: 4px 0;
+  margin-top: 8px;
+  font-weight: 700;
+`;
+
+export const SmallText = styled.p`
+  padding: 4px 0;
+`;

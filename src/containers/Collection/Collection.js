@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Neo from '../../components/neoList/neo/neo';
-import { Title, Container } from '../../generalStyles';
+import { Title, Container, SmallText } from '../../generalStyles';
 import * as S from './styles';
 
 const Collection = () => {
@@ -13,7 +13,7 @@ const Collection = () => {
       ))}
     </S.CollectionsContainer>
 
-  ) : <p>There is nothing to display</p>;
+  ) : <SmallText>There is nothing to display</SmallText>;
 
   return (
     <Container>

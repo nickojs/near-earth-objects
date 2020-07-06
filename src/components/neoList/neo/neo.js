@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import * as S from './styles';
-import { Title, Anchor, InlineButton } from '../../../generalStyles';
+import {
+  Title, Anchor, InlineButton, SmallText, SmallTitle
+} from '../../../generalStyles';
 import Details from './details';
 import Status from '../../UI/status/status';
 import Notification from '../../UI/notification/notification';
@@ -82,15 +84,15 @@ const Neo = ({ object, mode }) => {
 
       </S.NeoSubData>
       <S.DetailsContainer>
-        <S.NeoSmallTitle>estimated diameter</S.NeoSmallTitle>
+        <SmallTitle>estimated diameter</SmallTitle>
 
         {Object.keys(object.diameter).map((each) => (
-          <S.NeoSmallText key={each}>
+          <SmallText key={each}>
             {Number(object.diameter[each].min).toFixed(2)}
             {' '}~{' '}
             {Number(object.diameter[each].max).toFixed(2)}
             {' '}{each}
-          </S.NeoSmallText>
+          </SmallText>
         ))}
 
       </S.DetailsContainer>
