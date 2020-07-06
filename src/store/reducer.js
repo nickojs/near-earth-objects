@@ -5,7 +5,7 @@ const initState = {
 const rootReducer = (state = initState, action) => {
   switch (action.type) {
     case 'ADD':
-      return { collection: [...state.collection, action.neo] };
+      return { collection: [...state.collection, action.object] };
     case 'UPDATE':
       return { collection: [...state.collection, action.collection] };
     case 'CLEAR':
