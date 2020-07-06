@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as L } from 'react-router-dom';
 
 export const Navbar = styled.nav`
   display: flex;
@@ -20,4 +21,10 @@ export const Navbar = styled.nav`
     :nth-of-type(1){ margin-right: auto; }
     :hover{ font-weight: 700; }
   }
+`;
+
+export const Link = styled(L)`
+  color: ${({ theme }) => theme.color};
+  text-decoration: none;
+  :visited { color: ${({ theme }) => theme.color}; }
 `;

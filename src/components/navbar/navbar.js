@@ -5,8 +5,12 @@ const Navbar = (props) => (
   <header>
     <nav>
       <S.Navbar>
-        <li>Home</li>
-        <li>My Collection</li>
+        <li>
+          <S.Link to="/">Home</S.Link>
+        </li>
+        <li>
+          <S.Link to="/collections">My Collections</S.Link>
+        </li>
         <li>Themes</li>
       </S.Navbar>
     </nav>
