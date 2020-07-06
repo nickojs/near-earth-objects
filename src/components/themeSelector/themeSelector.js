@@ -12,8 +12,8 @@ const ThemeSelector = ({ show, clicked }) => {
           <S.ThemeOption key={theme}>
             <p>{theme}</p>
             <S.PreviewContainer>
-              <S.PreviewColor color={themes[theme].dark} />
               <S.PreviewColor color={themes[theme].light} />
+              <S.PreviewColor color={themes[theme].dark} />
             </S.PreviewContainer>
           </S.ThemeOption>
         ))}

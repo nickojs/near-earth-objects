@@ -21,7 +21,7 @@ export const ThemeList = styled.ul`
 export const ThemeOption = styled.li`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   
   margin: 0 auto;
@@ -29,15 +29,17 @@ export const ThemeOption = styled.li`
   cursor: pointer;
 
   :hover{ 
-    background: white;
+    color: gold;
   }
 `;
 
 export const PreviewContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   margin-left: auto;
   width: 100px;
+
 `;
 
 export const PreviewColor = styled.div`
