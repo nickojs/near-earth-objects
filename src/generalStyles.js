@@ -22,7 +22,7 @@ export const Container = styled.div`
   box-shadow: 0 0 10px ${({ theme }) => theme.light};
 
   max-width: 900px;
-  margin: 0 auto;
+  margin: 12px;
 `;
 
 export const TogglableContainer = styled.div`

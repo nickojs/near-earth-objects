@@ -6,15 +6,19 @@ import * as S from './styles';
 
 const Collection = () => {
   const { collection } = useSelector((state) => state);
+  const collectionList = collection.length > 0 ? (
+    <S.CollectionsContainer>
+      { collection.map((each) => (
+        <Neo key={each.id} object={each} mode="collection" />
+      ))}
+    </S.CollectionsContainer>
+
+  ) : <p>There is nothing to display</p>;
 
   return (
     <Container>
       <Title>Collections</Title>
-      <S.CollectionsContainer>
-        {collection.map((each) => (
-          <Neo key={each.id} object={each} mode="collection" />
-        ))}
-      </S.CollectionsContainer>
+      {collectionList}
     </Container>
   );
 };
