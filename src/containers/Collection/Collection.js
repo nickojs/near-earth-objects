@@ -11,7 +11,7 @@ const Collection = () => {
     <div>
       <ExternalTitle>Collections</ExternalTitle>
       <Container>
-        {collection.map((each) => <Neo object={each} />)}
+        {collection.map((each) => <Neo object={each} mode="collection" />)}
       </Container>
     </div>
   );

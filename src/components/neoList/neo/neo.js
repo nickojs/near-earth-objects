@@ -8,8 +8,9 @@ import Details from './details';
 
 import useRequest from '../../../hooks/request';
 
-const Neo = ({ object }) => {
+const Neo = ({ object, mode }) => {
   const [toggle, setToggle] = useState(true);
+  const [remove, setRemove] = useState(false);
   const [options, setOptions] = useState(null);
   const [requestData] = useRequest(options);
   const { data, loading, error } = requestData;
@@ -29,12 +30,27 @@ const Neo = ({ object }) => {
     }
   };
 
-  const addToCollectionHandler = () => {
+  const addToCollection = () => {
     const findEqual = collection.find((obj) => obj.id === object.id);
     if (!findEqual) {
       dispatch({ type: 'ADD', object });
     }
+    setRemove(true);
   };
+
+  const removeFromCollection = () => {
+    const filterCollection = collection.filter((obj) => obj.id !== object.id);
+    dispatch({ type: 'UPDATE', collection: filterCollection });
+    setRemove(false);
+  };
+
+  const buttons = mode === 'collection' ? null : (
+    <S.NeoBtn
+      type="button"
+      onClick={remove ? removeFromCollection : addToCollection}
+    > {remove ? 'Remove from' : 'Save to'} collection
+    </S.NeoBtn>
+  );
 
   return (
     <S.NeoContainer>
@@ -78,12 +94,7 @@ const Neo = ({ object }) => {
       > {toggle ? 'Show' : 'Hide' } details
       </S.NeoBtn>
 
-      <S.NeoBtn
-        type="button"
-        onClick={addToCollectionHandler}
-      > Save to collection
-      </S.NeoBtn>
-
+      {buttons}
     </S.NeoContainer>
   );
 };
