@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useState } from 'react';
 import Search from '../../components/search/search';
 import NeoList from '../../components/neoList/neoList';
@@ -20,15 +21,17 @@ const Core = () => {
   };
 
   const nearEarthObjects = data?.near_earth_objects;
-  const neoList = nearEarthObjects &&
-    Object
-    .keys(nearEarthObjects)
-    .sort()
-    .map(key =>
-      (<NeoList
+  const neoList = nearEarthObjects
+    && Object
+      .keys(nearEarthObjects)
+      .sort()
+      .map((key) => (
+        <NeoList
           key={key}
           title={key}
-          list={nearEarthObjects[key]} />));
+          list={nearEarthObjects[key]}
+        />
+      ));
 
   return (
     <div>

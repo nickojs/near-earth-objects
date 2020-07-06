@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import Dialog from '../dialog/dialog';
 import Loading from '../loading/loading';

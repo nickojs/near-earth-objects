@@ -58,7 +58,9 @@ export const Button = styled.button`
   }
 
   :active{ transform: translateX(-5px) }
-  :disabled{ ${disabled} }
+  :disabled{ 
+    ${disabled} 
+  };
 `;
 
 export const ExternalTitle = styled.h1`

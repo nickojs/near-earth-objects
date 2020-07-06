@@ -20,6 +20,7 @@ const Search = ({ setQuery }) => {
           <input
             type="date"
             name="initialDate"
+            defaultValue="2020-07-01"
             onChange={(event) => setInitialDate(event.target.value)}
           />
         </S.InputWrapper>
@@ -29,13 +30,14 @@ const Search = ({ setQuery }) => {
             type="date"
             name="finalDate"
             min={initialDate}
+            defaultValue="2020-07-01"
             onChange={(event) => setFinalDate(event.target.value)}
           />
         </S.InputWrapper>
         <Button
           type="button"
           onClick={queryHandler}
-          disabled={initialDate.length <= 0 || finalDate.length <= 0}
+          // disabled={initialDate.length <= 0 || finalDate.length <= 0}
         >Search
         </Button>
 
