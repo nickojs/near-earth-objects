@@ -6,5 +6,61 @@
     "light": "#3F586C",
     "color": "#FFF",
     "invertedColor": "#000"
+  },
+  "minmatar": {
+    "darkOp": "#15161895",
+    "dark": "#151618",
+    "lightOp": "#67473c95",
+    "light": "#67473c",
+    "color": "#FFF",
+    "invertedColor": "#000"
+  },
+  "amarr": {
+    "darkOp": "#0b0d0c95",
+    "dark": "#0b0d0c",
+    "lightOp": "#977a4295",
+    "light": "#977a42",
+    "color": "#FFF",
+    "invertedColor": "#000"
+  },
+  "gallente": {
+    "darkOp": "#0e161995",
+    "dark": "#0e1619",
+    "lightOp": "#31655895",
+    "light": "#316558",
+    "color": "#FFF",
+    "invertedColor": "#000"
+  },
+  "serpentis": {
+    "darkOp": "#0f131295",
+    "dark": "#0f1312",
+    "lightOp": "#38573795",
+    "light": "#385737",
+    "color": "#FFF",
+    "invertedColor": "#000"
+  },
+  "servant sisters": {
+    "darkOp": "#07131395",
+    "dark": "#071313",
+    "lightOp": "#8a8a8c95",
+    "light": "#8a8a8c",
+    "color": "#FFF",
+    "invertedColor": "#000"
+  },
+  "blood raiders": {
+    "darkOp": "#0d0e0995",
+    "dark": "#0d0e09",
+    "lightOp": "#4f181595",
+    "light": "#4f1815",
+    "color": "#FFF",
+    "invertedColor": "#000"
+  },
+  "dark matter": {
+    "darkOp": "#090b0a95",
+    "dark": "#090b0a",
+    "lightOp": "#383c3f95",
+    "light": "#383c3f",
+    "color": "#FFF",
+    "invertedColor": "#000"
   }
 }
