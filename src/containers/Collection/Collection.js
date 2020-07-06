@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Neo from '../../components/neoList/neo/neo';
-import { ExternalTitle, Container } from '../../generalStyles';
+import { ExternalTitle } from '../../generalStyles';
+import * as S from './styles';
 
 const Collection = () => {
   const { collection } = useSelector((state) => state);
@@ -9,11 +10,11 @@ const Collection = () => {
   return (
     <div>
       <ExternalTitle>Collections</ExternalTitle>
-      <Container>
+      <S.CollectionsContainer>
         {collection.map((each) => (
           <Neo key={each.id} object={each} mode="collection" />
         ))}
-      </Container>
+      </S.CollectionsContainer>
     </div>
   );
 };
