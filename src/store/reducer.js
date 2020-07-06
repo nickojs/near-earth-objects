@@ -7,7 +7,7 @@ const rootReducer = (state = initState, action) => {
     case 'ADD':
       return { collection: [...state.collection, action.object] };
     case 'UPDATE':
-      return { collection: [...state.collection, action.collection] };
+      return { collection: action.collection };
     case 'CLEAR':
       return { collection: [...state.collection, action.collection] };
     default: return state;
