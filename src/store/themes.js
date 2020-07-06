@@ -8,7 +8,7 @@ const initState = {
 const themeReducer = (state = initState, action) => {
   switch (action.type) {
     case 'CHANGE_THEME':
-      return { ...state, currentTheme: action.theme };
+      return { ...state, currentTheme: action.value };
     default: return state;
   }
 };
