@@ -1,15 +1,13 @@
-const initState = {
-  collection: []
-};
+const initState = [];
 
 const collectionReducer = (state = initState, action) => {
   switch (action.type) {
     case 'ADD':
-      return { collection: [...state.collection, action.object] };
+      return [...state, action.object];
     case 'UPDATE':
-      return { collection: action.collection };
+      return action.collection;
     case 'CLEAR':
-      return { collection: [...state.collection, action.collection] };
+      return initState;
     default: return state;
   }
 };
