@@ -9,7 +9,7 @@ const Navbar = (props) => (
           <S.Link to="/">Home</S.Link>
         </li>
         <li>
-          <S.Link to="/collections">My Collections</S.Link>
+          <S.Link to="/collection">My Collection</S.Link>
         </li>
         <li>Themes</li>
       </S.Navbar>
